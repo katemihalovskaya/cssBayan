@@ -23,33 +23,16 @@ html, body {
     overflow: hidden; /* do not scroll horizontally */
 }
 
-/* 
-@media (max-width: 768px) {
-    ._container {
-        max-width: 668px;
-    }
-}
-
-@media (max-width: 380px) {
-    ._container {
-        max-width: 330px;
-    }
-} */
-
 .accordion {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
     width: 75%;
-    padding: 15px 15px;   
+    padding: 30px 15px;   
 }  
 
 h1 {
     color: #494848;
     margin-bottom: 15px;
 }
-
 
   /* Radio Inputs */
 input[name='panel'] {
@@ -61,36 +44,41 @@ label {
     position: relative;
     display: block;
     padding: 1em;
+    padding-right: 2.5em;
     background: linear-gradient(to bottom, rgba(254,254,254,1) 0%,antiquewhite 50%,rgb(250, 241, 231) 55%,rgb(250, 243, 235) 100%);
     border-top: 1px solid #fff;
     border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     box-shadow: inset 0 2px 0 #fff;
     font-size: 1.5em;
     text-shadow: 0 1px 0 rgb(255 255 255 / 75%);
-    color: #666;
+    color: rgb(180, 104, 4);
     cursor: pointer;
     transition: all .4s cubic-bezier(0.865, 0.140, 0.095, 0.870);
 }   
 
 label:after {
     position: absolute;
-    right: 1em;
-    width: 1em;
-    height: 1em;
+    right: 1.5em;
+    top: 1em;
     color: #666;
     text-align: center;
     text-shadow: 0 1px 0 rgb(0 0 0 / 75%);
 }
+
 .accordion-container:hover label:after {
     content: "+";
 }
+
+.accordion-container:hover label {
+    color: #494848;
+}
     
 label:hover {
-      color: rgb(180, 104, 4);
+    color: #494848;
 }
 
 input:checked + label {
-    color: rgb(180, 104, 4);
+    color: #494848;
 }
   
 .accordion-container:hover input:checked + label:after {
@@ -98,22 +86,28 @@ input:checked + label {
     line-height: .8em;
 }
   
-  /* Panel Content */
+/* Panel Content */
 .accordion__content {
     overflow: hidden;
-    height: 0px;
+    max-height: 0;
     position: relative;
     padding: 0 1.5em;
-    box-shadow: inset 4px 0 0 0 rgb(170, 129, 74), inset 0 3px 6px rgb(0 0 0 / 75%);
-    background: rgb(180, 104, 4);
-    background: linear-gradient(to bottom, rgb(251, 207, 148) 0%,rgb(246, 173, 78) 100%);
     color: #eee;
-    transition: height .4s cubic-bezier(0.865, 0.140, 0.095, 0.870);
     vertical-align: baseline;
+    transition:max-height 0.5s ease-out;
+}
+
+.accordion-container img {
+    margin-top: 1em;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .accordion__content :not(:last-of-type) {
-    box-shadow: inset 0 -2px 2px rgba(#000,.25), inset 4px 0 0 0 #1abc9c, inset 0 3px 6px rgba(#000,.75);
+    box-shadow: inset 0 -2px 2px rgba(#000,.25), inset 4px 0 0 0 rgb(180, 104, 4), inset 0 3px 6px rgba(#000,.75);
 }
 
 .accordion__content:hover {
@@ -129,16 +123,13 @@ input:checked + label {
     line-height: 1.4em;
 }
 
-/* 
-* Size Variations
-*/
-
-input[name='panel']:checked ~ .accordion__content.accordion__content--small {
-    height: 150px;
+/* Size Variations */
+input[name='panel']:checked ~ label .accordion__content {
+    max-height: 20em;
 }
 
-.panel-container:hover .accordion__content.accordion__content--small {
-    height: 150px;
+.panel-container:hover .accordion__content {
+    max-height: 20em;
 }
 
 .panel-container:hover label:after {
