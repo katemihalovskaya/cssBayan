@@ -99,7 +99,8 @@ input:checked + label {
 
 .accordion-container img {
     margin-top: 1em;
-    max-width: 100%;
+    width: 100%;
+    max-width: 20em;
     height: auto;
     display: block;
     margin-left: auto;
@@ -125,11 +126,11 @@ input:checked + label {
 
 /* Size Variations */
 input[name='panel']:checked ~ label .accordion__content {
-    max-height: 20em;
+    max-height: 30em;
 }
 
 .panel-container:hover .accordion__content {
-    max-height: 20em;
+    max-height: 30em;
 }
 
 .panel-container:hover label:after {
