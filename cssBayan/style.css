@@ -12,7 +12,25 @@ html, body {
     height: 100%;
     background-color:antiquewhite;
     scroll-behavior: smooth;
-    font-size: 1.5vw;
+    font-size: 1.4em;
+}
+
+@media (max-width: 1920px) {
+    body {
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 820px) {
+    body {
+        font-size: 0.4em;
+    }
+}
+
+@media (max-width: 320px) {
+    body {
+        font-size: 0.32em;
+    }
 }
 
 .wrapper {
