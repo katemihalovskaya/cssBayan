@@ -86,25 +86,8 @@ label {
     text-shadow: 0 1px 0 rgb(0 0 0 / 75%); 
 }
 
-.accordion-container:hover .inner-container svg {
-    visibility: visible;
-}
-
-.accordion-container:hover label {
-    color: #494848;
-}
-    
-label:hover {
-    color: #494848;
-}
-
 input:checked + label {
     color: #494848;
-}
-  
-.accordion-container:hover input:checked ~ label .inner-container svg {
-    visibility: visible;
-    transform: rotate(45deg);
 }
   
 /* Panel Content */
@@ -132,10 +115,6 @@ input:checked + label {
     box-shadow: inset 0 -2px 2px rgba(#000,.25), inset 4px 0 0 0 rgb(180, 104, 4), inset 0 3px 6px rgba(#000,.75);
 }
 
-.accordion__content:hover {
-    cursor: pointer;
-}
-
 .accordion__header {
     padding: 1em 0;
   }
@@ -148,15 +127,6 @@ input:checked + label {
 /* Size Variations */
 input[name='panel']:checked ~ label .accordion__content {
     max-height: 30em;
-}
-
-.panel-container:hover .accordion__content {
-    max-height: 30em;
-}
-
-.panel-container:hover .inner-container svg {
-    visibility: visible;
-    transform: rotate(45deg);
 }
 
 .panel-container:active label {
@@ -172,4 +142,36 @@ input[name='panel']:checked ~ label .accordion__content {
 .panel-container:active .inner-container svg {
     color: rgb(132, 75, 1);
     opacity: 0.6;
+}
+
+@media(hover:hover){
+    .accordion-container:hover .inner-container svg {
+        visibility: visible;
+    }
+    
+    .accordion-container:hover label {
+        color: #494848;
+    }
+        
+    label:hover {
+        color: #494848;
+    }
+
+    .accordion__content:hover {
+        cursor: pointer;
+    }
+
+    .panel-container:hover .accordion__content {
+        max-height: 30em;
+    }
+    
+    .panel-container:hover .inner-container svg {
+        visibility: visible;
+        transform: rotate(45deg);
+    }
+    
+    .accordion-container:hover input:checked ~ label .inner-container svg {
+        visibility: visible;
+        transform: rotate(45deg);
+    }
 }
